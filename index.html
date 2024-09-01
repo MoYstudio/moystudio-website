@@ -1,46 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>MoY 工作室 活动预览页</title>
-  <link rel="icon" type="image/png" href="./images/social/main_logo.png">
-  <link rel="stylesheet" href="./css/time_style.css">
-  <meta name="author" content="zirranYa">
-  <script  src="./js/time_title_change.js"></script>
-  <script  src="./js/dosafe.js"></script>
-
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="icon" type="image/png" href="./images/social/main_logo.png">
+    <link rel="stylesheet" href="./css/time_style.css">
+    <link rel="stylesheet" href="./css/bottom.css">
+    <meta name="author" content="zirranYa">
+    <script src="./js/time_title_change.js"></script>
+    <script src="./js/dosafe.js"></script>
 </head>
 <body>
 
+
 <div class="wrapper">
+   <button id="language-toggle" onclick="toggleLanguage()"></button>
+
     <figure class="pageLogo"><img src="./images/social/logo.png" alt=""></figure>
-   <div class="timer">
-      <ul class="timer__content">
-         <li class="timer__item">
-            <p class="timer__name">天</p>
-            <span id="days" class="timer__number"></span>
-         </li>
-         <li class="timer__item">
-            <p class="timer__name">小时</p>
-            <span id="hours" class="timer__number"></span>
-         </li>
-         <li class="timer__item">
-            <p class="timer__name">分钟</p>
-            <span id="minutes" class="timer__number"></span>
-         </li>
-         <li class="timer__item">
-            <p class="timer__name">秒</p>
-            <span id="seconds" class="timer__number"></span>
-         </li>
-      </ul>
-      <p class="timer__text">新官网要来了，莫急莫急┐(ﾟ～ﾟ)┌</p>
-   </div>
+    
 
-   <footer class="footer">
 
-      <p class="footer__text">MoY Studio | zirranYa</p>
-      <div class="footer__social">
-        <a href="https://github.com/MoYstudio" target="_blank">
+    <div class="timer">
+        <ul class="timer__content">
+            <li class="timer__item">
+                <p class="timer__name" id="days-label"></p>
+                <span id="days" class="timer__number"></span>
+            </li>
+            <li class="timer__item">
+                <p class="timer__name" id="hours-label"></p>
+                <span id="hours" class="timer__number"></span>
+            </li>
+            <li class="timer__item">
+                <p class="timer__name" id="minutes-label"></p>
+                <span id="minutes" class="timer__number"></span>
+            </li>
+            <li class="timer__item">
+                <p class="timer__name" id="seconds-label"></p>
+                <span id="seconds" class="timer__number"></span>
+            </li>
+        </ul>
+        <p class="timer__text" id="timer-text"></p>
+    </div>
+
+    <footer class="footer">
+        <p class="footer__text" id="footer-text"></p>
+        <div class="footer__social">
+         <a href="https://github.com/MoYstudio" target="_blank">
             <img src="./images/social/github.png" alt="GitHub">
           </a>
           <p>&nbsp;&nbsp;&nbsp;</p>
@@ -55,11 +60,12 @@
           <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=OwOoTCPODDIdQOsVBc1-ZrFiYevKZSHi&authKey=tfNAaNlTo1cbBB4xo4HvIXSJjWXgWYclayZ6dDDqt1hHOxhU47lriedUWMI3BHkA&noverify=0&group_code=318865323" target="_blank">
             <img src="./images/social/QQ.png" alt="QQ">
           </a>
-      </div>
-   </footer>
+        </div>
+    </footer>
 
 </div>
-  <script  src="./js/time_script.js"></script>
+<script src="./js/time_script.js"></script>
+<script src="./js/language.js"></script>
 
 </body>
 </html>

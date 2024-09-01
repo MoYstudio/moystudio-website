@@ -1,0 +1,19 @@
+#language-toggle {
+    border: none; 
+    border-radius: 12px; 
+    opacity: 0.6; 
+    background-color: #7b00ffda; 
+    color: rgb(255, 255, 255); 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    top:2%;
+    z-index: 1;
+    right: 3%;
+}
+
+
+#language-toggle:hover {
+    opacity: 1; 
+    background-color: #703bb5c7; 
+}
