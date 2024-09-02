@@ -3,15 +3,18 @@ let currentLanguage = 'zh_cn';
 const supportedLanguages = {
     'zh_cn': {
         name: '中文',
-        button: '切换语言'
+        button: '🌐',
+        title: 'MoY工作室| 官网开放 |倒计时'
     },
     'en_us': {
         name: 'English',
-        button: 'Switch Language'
+        button: '🌐',
+        title: 'MoY Studio| The official website is open |countdown'
     },
     'ru_ru': {
         name: 'Русский',
-        button: 'Сменить язык'
+        button: '🌐',
+        title: 'Студия MOY | Официальный сайт открыт |отсчёт'
     }
 };
 
@@ -26,11 +29,13 @@ function loadLanguage(lang) {
             document.getElementById('timer-text').innerText = data['timer.text'];
             document.getElementById('footer-text').innerText = data['footer.text'];
             document.getElementById('language-toggle').innerText = supportedLanguages[currentLanguage].button;
+
+            document.title = supportedLanguages[currentLanguage].title;
         })
         .catch(error => console.error('Error loading language:', error));
 }
 
-function toggleLanguage() {
+function toggleLanguage(event) {
     const languages = Object.keys(supportedLanguages);
     const currentIndex = languages.indexOf(currentLanguage);
     const nextIndex = (currentIndex + 1) % languages.length;

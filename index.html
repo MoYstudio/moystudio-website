@@ -2,25 +2,23 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>MoY工作室| 官网开放 |倒计时</title>
     <link rel="icon" type="image/png" href="./images/social/main_logo.png">
     <link rel="stylesheet" href="./css/time_style.css">
     <link rel="stylesheet" href="./css/bottom.css">
     <meta name="author" content="zirranYa">
-    <script src="./js/time_title_change.js"></script>
     <script src="./js/dosafe.js"></script>
 </head>
 <body>
 
 
 <div class="wrapper">
-   <button id="language-toggle" onclick="toggleLanguage()"></button>
+
+    <button id="language-toggle" onclick="toggleLanguage()">🌐</button>
 
     <figure class="pageLogo"><img src="./images/social/logo.png" alt=""></figure>
     
-
-
-    <div class="timer">
+    <div class="timer" class="fade">
         <ul class="timer__content">
             <li class="timer__item">
                 <p class="timer__name" id="days-label"></p>
@@ -42,7 +40,7 @@
         <p class="timer__text" id="timer-text"></p>
     </div>
 
-    <footer class="footer">
+    <footer class="footer fade">
         <p class="footer__text" id="footer-text"></p>
         <div class="footer__social">
          <a href="https://github.com/MoYstudio" target="_blank">
