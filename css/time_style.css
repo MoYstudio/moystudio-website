@@ -367,3 +367,7 @@ body {
     padding: 20px 40px;
   }
 } 
+
+.timer_end {
+  display: none;
+}

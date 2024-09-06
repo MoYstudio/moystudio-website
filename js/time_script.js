@@ -4,25 +4,32 @@ window.addEventListener("load", event => {
         hour = minute * 60,
         day = hour * 24;
 
-    const targetDate = new Date("2024-10-04T23:30:00").getTime();
+    const targetDateUTC8 = new Date("2024-10-07T23:55:00+08:00").getTime();
+    const localTimezoneOffset = new Date().getTimezoneOffset() * -1;
+
+    const localTargetDate = new Date(targetDateUTC8 - (localTimezoneOffset * minute)).getTime();
 
     setTimeout(() => {
         let x = setInterval(function () {
             let now = new Date().getTime(),
-                distance = targetDate - now;
-
-            document.getElementById('days').innerText = Math.floor(distance / (day));
-            document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour));
-            document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute));
-            document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+                distance = localTargetDate - now;
 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById('days').innerText = '0';
-                document.getElementById('hours').innerText = '0';
-                document.getElementById('minutes').innerText = '0';
-                document.getElementById('seconds').innerText = '0';
+                document.querySelector('.timer').style.display = 'none';
+                document.querySelector('.timer_end').style.display = 'block';
+                return; 
             }
+
+            const days = Math.floor(distance / (day));
+            const hours = Math.floor((distance % (day)) / (hour));
+            const minutes = Math.floor((distance % (hour)) / (minute));
+            const seconds = Math.floor((distance % (minute)) / second);
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
 
         }, second);
 
