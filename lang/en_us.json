@@ -4,14 +4,15 @@
     "timer.minutes": "Minutes",
     "timer.seconds": "Seconds",
     "timer.text": "The new website is coming, \nPlease wait! ╮（╯＿╰）╭",
+    "timer.end.text": "A new beginning\nThe possibilities are endless!",
     "footer.text": "MoY Studio | zirranYa",
     "jump.loading": "Loading...",
-    "jump.title.home": "主页",
-    "jump.des.home": "新的开始，无限的可能！\n<(￣︶￣)↗[GO!]",
-    "jump.title.member": "成员",
-    "jump.des.member": "我们工作室的每个人都至关重要！✨",    
-    "jump.title.work": "作品",
-    "jump.des.work": "⚒️ “ 匠 心 独 造” ⚒️",
-    "jump.title.contact": "相关",
-    "jump.des.contact": "⚜️ MoY工作室相关链接 ⚜️"
+    "jump.title.home": "Home",
+    "jump.des.home": "New beginnings, endless possibilities!\n<(￣︶￣)↗[GO!]",
+    "jump.title.member": "Members",
+    "jump.des.member": "Everyone in our studio matters! ✨",
+    "jump.title.work": "Works",
+    "jump.des.work": "⚒️ “Mastercrafted Sudok”⚒️",
+    "jump.title.contact": "Correlation",
+    "jump.des.contact": "⚜️MoY Studio Related Links ⚜️"
 }
