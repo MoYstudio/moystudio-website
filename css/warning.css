@@ -8,5 +8,7 @@
 body{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/background/jump_contant.png);
     background-size: cover;
+    height: 100%;
+    width: 100%;
     background-repeat: no-repeat;
 }
