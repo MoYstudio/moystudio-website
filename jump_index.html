@@ -2,7 +2,7 @@
 <html lang="zh" >
 <head>
   <meta charset="UTF-8">
-  <title>MoY Studio | ( •̀ ω •́ )✧</title>
+  <title></title>
   <link rel="icon" type="image/png" href="./images/social/main_logo.png">
   <meta name="author" content="zirranYa">
   <link rel="stylesheet" href="./css/jump_style.css">
@@ -12,34 +12,33 @@
 <body>
 <div class="flex-container">
 
+
+
 	<div class="spinner"><p>
 		<div class="cube1"></div>
 		<div class="cube2"></div>
-		<p id="jump_loading">
+		<p id="jump-loading">
 		</p>
 	</div>
+
 
 	<button id="language-toggle" onclick="toggleLanguage()"></button>
 
 	<div class="flex-slide home">
-		<div class="flex-title flex-title-home"><p id="jump_title_home"></p></div>
-		<div class="flex-about flex-about-home"><p id="jump_des_home"></p></div>
+		<div class="flex-title flex-title-home"><p id="jump-title-home"></p></div>
+		<div class="flex-about flex-about-home"><p id="jump-des-home"></p></div>
 	</div>
 
-	<div class="flex-slide about">
-		<div class="flex-title">About</div>
-		<div class="flex-about"><p>Click here to navigate to the About section of the website</p></div>
+	<div class="flex-slide member">
+		<div class="flex-title"><p id="jump-title-member"></p></div>
+		<div class="flex-about"><p id="jump-des-member"></p></div>
 	</div>
+
 	<div class="flex-slide work">
-		<div class="flex-title">Work</div>
-		<div class="flex-about"><p>Listing relevant snippets of work:</p>
-			<ul>
-				<li>First piece of work</li>
-				<li>Second piece of work</li>
-				<li>Third piece of work</li>
-			</ul>
-		</div>
+		<div class="flex-title"><p id="jump-title-work"></p></div>
+		<div class="flex-about"><p id="jump-des-work"></p></div>
 	</div>
+
 	<div class="flex-slide contact">
 		<div class="flex-title">Contact</div>
 				<div class="flex-about">
@@ -49,9 +48,11 @@
 						<p>Comment <textarea type="text" name="comment" row="5"></textarea></p>
 						<p><input type="submit" name="email" value="Send Message"></p>
 					</form>
-
 		</div>
 	</div>
+
+
+
 </div>
   <script src='./js/jquery.min.3.1.1.js'></script>
 <script src='./js/jump_jquery.waitforimages.min.js'></script>
