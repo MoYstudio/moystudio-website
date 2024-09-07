@@ -6,9 +6,8 @@
 }
 
 body{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/background/jump_contant.png);
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
+margin:0px;
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/background/jump_contant.png) no-repeat;
+background-size:100% 100%;
+background-attachment:fixed;
 }
