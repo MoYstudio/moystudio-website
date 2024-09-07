@@ -4,14 +4,15 @@
     "timer.minutes": "Минуты",
     "timer.seconds": "Секунды",
     "timer.text": "Новый сайт скоро появится,\nподождите ╮（╯＿╰）╭",
+    "timer.end.text": "Новое начало\nВозможности безграничны!",
     "footer.text": "MoY студия | zirranYa",
     "jump.loading": "Погрузка...",
-    "jump.title.home": "主页",
-    "jump.des.home": "新的开始，无限的可能！\n<(￣︶￣)↗[GO!]",
-    "jump.title.member": "成员",
-    "jump.des.member": "我们工作室的每个人都至关重要！✨",    
-    "jump.title.work": "作品",
-    "jump.des.work": "⚒️ “ 匠 心 独 造” ⚒️",
-    "jump.title.contact": "相关",
-    "jump.des.contact": "⚜️ MoY工作室相关链接 ⚜️"
+    "jump.title.home": "Главная страница",
+    "jump.des.home": "Новые начинания, безграничные возможности!\n<(￣︶￣)↗[GO!]",
+    "jump.title.member": "член",
+    "jump.des.member": "Каждый в нашей студии имеет значение!✨",
+    "jump.title.work": "опус",
+    "jump.des.work": "⚒️ “ Изобретательность” ⚒️",
+    "jump.title.contact": "корреляция",
+    "jump.des.contact": "⚜️ MoY студия Связанные ссылки ⚜️"
 }
