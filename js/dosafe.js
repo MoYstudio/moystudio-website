@@ -41,12 +41,3 @@ var check = function () {
     } catch (err) { }
 };
 check(); 
-
-//可视判断
-var h = window.innerHeight;
-var w = window.innerWidth;
-window.onresize = function () {
-    if (h !== window.innerHeight || w !== window.innerWidth) {
-        window.location.href = "https://www.moystudio.fun/warning";
-    }
-};

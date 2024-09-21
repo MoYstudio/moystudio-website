@@ -1,32 +1,43 @@
-
-let currentLanguage = 'zh_cn';
+let index = 0;
+let titleFragment = '';
+let longTitle = '';
 
 const supportedLanguages = {
     'zh_cn': {
         name: '中文',
-        button: '🌏',
         title: {
-            index: 'MoY工作室| 官网开放 |倒计时',
-            jump: 'MoY Studio | ( •̀ ω •́ )✧ | 跳转！'
+            index: 'MoY工作室 | 官网开放 | 倒计时',
+            jump: 'MoY Studio | ( •̀ ω •́ )✧ | 跳转！',
+            error: 'OvO，你迷路了...'
         }
     },
     'en_us': {
         name: 'English(US)',
-        button: '🌎',
         title: {
-            index: 'MoY Studio| The official website is open |countdown',
-            jump: 'MoY Studio | ( •̀ ω •́ )✧ | JUMPING!'
+            index: 'MoY Studio | The official website is open | countdown',
+            jump: 'MoY Studio | ( •̀ ω •́ )✧ | JUMPING!',
+            error: 'OvO, U Lost...'
         }
     },
     'ru_ru': {
         name: 'Русский',
-        button: '🌏',
         title: {
-            index: 'MOY Студия | Официальный сайт открыт |отсчёт',
-            jump: 'MoY Studio | ( •̀ ω •́ )✧ | Прыгать!'
+            index: 'MOY Студия | Официальный сайт открыт | отсчёт',
+            jump: 'MoY Studio | ( •̀ ω •́ )✧ | Прыгать!',
+            error: 'OvO, Вы потерялись...'
         }
     }
 };
+
+let currentLanguage = 'zh_cn';
+
+function updateTitle() {
+    if (longTitle.length > 0) {
+        titleFragment = longTitle.slice(index) + longTitle.slice(0, index);
+        document.title = titleFragment;
+        index = (index + 1) % longTitle.length;
+    }
+}
 
 function changeLanguage() {
     const selectElement = document.getElementById('language-toggle');
@@ -39,16 +50,20 @@ function loadLanguage(lang) {
         .then(response => response.json())
         .then(data => {
             updateUI(data);
-            
+
             const selectElement = document.getElementById('language-toggle');
             selectElement.value = currentLanguage;
-            
+
             const pageName = window.location.pathname.split('/').pop();
             if (pageName === 'index.html') {
-                document.title = supportedLanguages[currentLanguage].title.index;
+                longTitle = supportedLanguages[currentLanguage].title.index;
             } else if (pageName === 'jump_index.html') {
-                document.title = supportedLanguages[currentLanguage].title.jump;
+                longTitle = supportedLanguages[currentLanguage].title.jump;
+            } else if (pageName === 'error.html') {
+                longTitle = supportedLanguages[currentLanguage].title.error;
             }
+
+            updateTitle();
         })
         .catch(error => console.error('Error loading language:', error));
 }
@@ -72,6 +87,9 @@ function updateUI(data) {
     }
     if (document.getElementById('timer-end-text')) {
         document.getElementById('timer-end-text').innerText = data['timer.end.text'];
+    }
+    if (document.getElementById('start-in-pages')) {
+        document.getElementById('start-in-pages').innerText = data['start.in.page'];
     }
     if (document.getElementById('footer-text')) {
         document.getElementById('footer-text').innerText = data['footer.text'];
@@ -105,15 +123,17 @@ function updateUI(data) {
     if (document.getElementById('jump-des-contact')) {
         document.getElementById('jump-des-contact').innerText = data['jump.des.contact'];
     }
+
+    // 404
+    if (document.getElementById('404-tit')) {
+        document.getElementById('404-tit').innerText = data['404.tit'];
+    }   
+    if (document.getElementById('404-bot')) {
+        document.getElementById('404-bot').innerText = data['404.bot'];
+    }
 }
 
-function toggleLanguage(event) {
-    const languages = Object.keys(supportedLanguages);
-    const currentIndex = languages.indexOf(currentLanguage);
-    const nextIndex = (currentIndex + 1) % languages.length;
-    currentLanguage = languages[nextIndex];
-    loadLanguage(currentLanguage);
-}
+
 
 function determineDefaultLanguage() {
     fetch('https://ipinfo.io?token=03fcf3b352e7a2')
@@ -125,10 +145,8 @@ function determineDefaultLanguage() {
                 currentLanguage = 'zh_cn';
             } else if (country === 'RU') {
                 currentLanguage = 'ru_ru';
-            } else if (country === 'US') {
-                currentLanguage = 'en_us';
             } else {
-                currentLanguage = 'zh_cn';
+                currentLanguage = 'en_us';
             }
 
             loadLanguage(currentLanguage);
@@ -139,4 +157,7 @@ function determineDefaultLanguage() {
         });
 }
 
-document.addEventListener('DOMContentLoaded', determineDefaultLanguage);
+document.addEventListener('DOMContentLoaded', () => {
+    determineDefaultLanguage();
+    setInterval(updateTitle, 300); // 开始标题滚动
+});
